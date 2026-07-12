@@ -1,0 +1,301 @@
+/* ============================================================
+   Swan Solution — Hotel Management System
+   Shared stylesheet (index.html + view.html)
+   Design tokens
+   Navy   : #14213A
+   Slate  : #48566B
+   Gold   : #C9A15F
+   Cream  : #F7F3EA
+   Line   : #E3DCCB
+   ============================================================ */
+
+:root {
+  --navy: #14213a;
+  --slate: #48566b;
+  --gold: #c9a15f;
+  --gold-dark: #a9823f;
+  --cream: #f7f3ea;
+  --line: #e3dccb;
+  --danger: #b3392c;
+  --success: #2f6d4f;
+  --radius: 10px;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--cream);
+  color: var(--navy);
+}
+
+h1, h2, h3, .brand-font {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* ---------- Top bar shared by both pages ---------- */
+.top-bar {
+  background: linear-gradient(120deg, var(--navy) 0%, #1d2f52 100%);
+  color: #fff;
+  padding: 1.1rem 0;
+  border-bottom: 3px solid var(--gold);
+}
+
+.top-bar .brand-font {
+  letter-spacing: 0.5px;
+  font-size: 1.55rem;
+}
+
+.top-bar .tagline {
+  color: #c7cee0;
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.top-bar nav a {
+  color: #e7ebf3;
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.top-bar nav a:hover,
+.top-bar nav a.active {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+/* ---------- page-register (index.html) ---------- */
+body.page-register .hero-panel {
+  background: linear-gradient(150deg, var(--navy) 0%, #223357 65%, var(--gold-dark) 160%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 2.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body.page-register .hero-panel::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(201, 161, 95, 0.4);
+  border-radius: 50%;
+}
+
+body.page-register .hero-panel .eyebrow {
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+body.page-register .form-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(20, 33, 58, 0.06);
+}
+
+body.page-register .section-label {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: var(--navy);
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+body.page-register .form-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--slate);
+}
+
+body.page-register .form-control,
+body.page-register .form-select {
+  border-radius: 6px;
+  border: 1px solid #d7d2c4;
+  padding: 0.55rem 0.75rem;
+}
+
+body.page-register .form-control:focus,
+body.page-register .form-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(201, 161, 95, 0.25);
+}
+
+body.page-register .btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+  padding: 0.65rem 1.6rem;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+body.page-register .btn-gold:hover {
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #fff;
+}
+
+body.page-register .btn-outline-navy {
+  border: 1px solid var(--slate);
+  color: var(--slate);
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+body.page-register .btn-outline-navy:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+body.page-register .required-mark {
+  color: var(--danger);
+}
+
+/* Message box (showMessage) */
+body.page-register #formMessage,
+body.page-view #viewMessage {
+  border-radius: 8px;
+  font-size: 0.92rem;
+  display: none;
+}
+
+body.page-register #formMessage.show,
+body.page-view #viewMessage.show {
+  display: block;
+}
+
+/* ---------- page-view (view.html) ---------- */
+body.page-view .view-header {
+  background: linear-gradient(120deg, var(--navy), #24365c);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+}
+
+body.page-view .view-header .eyebrow {
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+body.page-view .search-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(20, 33, 58, 0.05);
+}
+
+body.page-view .search-card .input-group-text {
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+}
+
+body.page-view .search-card input {
+  border: 1px solid #d7d2c4;
+}
+
+body.page-view .table-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(20, 33, 58, 0.05);
+}
+
+body.page-view table thead {
+  background: var(--navy);
+  color: #fff;
+}
+
+body.page-view table thead th {
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border: none;
+}
+
+body.page-view table tbody tr:hover {
+  background-color: rgba(201, 161, 95, 0.08);
+}
+
+body.page-view td, body.page-view th {
+  vertical-align: middle;
+  font-size: 0.88rem;
+}
+
+body.page-view .badge-count {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+body.page-view .empty-state {
+  padding: 3.5rem 1rem;
+  text-align: center;
+  color: var(--slate);
+}
+
+body.page-view .empty-state i {
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+body.page-view .btn-delete {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+}
+
+body.page-view .btn-delete:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+footer.site-footer {
+  color: var(--slate);
+  font-size: 0.82rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold-dark);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767.98px) {
+  body.page-register .hero-panel,
+  body.page-view .view-header {
+    padding: 1.5rem 1.25rem;
+  }
+}
